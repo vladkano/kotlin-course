@@ -4,7 +4,7 @@ import java.nio.DoubleBuffer
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
+fun main1() {
     val name = "Kotlin"
     //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
     // to see how IntelliJ IDEA suggests fixing it.
@@ -81,4 +81,92 @@ fun printMassages(massages: String): Unit {
 
 fun fail(massages: String): Nothing {
     throw IllegalArgumentException(massages)
+}
+
+//lesson5
+fun mains() {
+    val sum = 10 + 5 //15
+    val diff = 10 - 5 //5
+    val product = 10 * 5 //50
+    val quotient = 10 / 5 //2
+    val remainder = 10 % 5 //0
+    val esEqual = 5 == 5 //(true)
+    val isNotEqual = (5 != 4) //true
+    val isGreater = (5 > 3) //true
+    val isLesser = (5 < 4) // false
+    val isGreaterOrEqual = (5 >= 6) //false
+    val isLesserOrEqual = (5 <= 5) //true
+    val andResult = true && true //true // и
+    val andResult1 = true && false //false
+    val andResult2 = false && false //false
+    val orResult = true || false // true //или
+    val orResult1 = false || false // false
+    val orResul2 = true || true // true
+    val notResult =  !(5 > 3) //false
+    var number = 5
+    number += 5 //number = number + 5 //10
+    number -= 3 //number = number - 3 //2
+    number /= 2 //деление
+    //5+5-3 = 7
+    number ++ //сделает +1 от последнего
+    number -- //сделает -1 от последнегго
+    ++number
+    println(number++) //будет +1 к последнему значению
+    println(++number) //будет +1 к изначальному числу
+
+    //приоритеты операций
+    //() - сначала в скобках
+    //если операции все имюется ,то сначала умножение и деление,а потом сложение и вычитание
+    val example = ((8 + 1 >= 9) || (6 - 2 != 4) && (2 * 3 == 6))
+                //      true    ||    false     &&      true = true
+
+
+    var name: String? = null
+    val result = name ?: "Unknown" //либо налл либо анкнаун
+              //         throw IllegalArgumentException("Не может быть null")
+
+
+
+
+
+
+
+
+
+
+
+    println(number)
+}
+
+fun main() {
+    printVolume(null)
+}
+fun printVolume(userVolume: Int?) {
+    val defaultVolume = 30
+    println(userVolume ?: defaultVolume)
+}
+
+fun main3() {
+   printPrice(123.8 , null)
+    printPrice(100.0 , 10)
+}
+fun printPrice(price: Double, s: Int?) {
+    val coef = (100 - (s ?: 0))/100.0
+    println(price * coef)
+}
+fun main4() {
+    printSiteLang("Rus")
+    printSiteLang(null)
+}
+fun printSiteLang(lang: String?) {
+    val defaultLang = "Eng"
+    println(lang?: defaultLang)
+}
+
+fun main5() {
+   printBox("")
+    printBox(null)
+}
+fun printBox(box: String?) {
+    println(box ?: throw Exception("Box is empty"))
 }
