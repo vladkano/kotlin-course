@@ -170,3 +170,66 @@ fun main5() {
 fun printBox(box: String?) {
     println(box ?: throw Exception("Box is empty"))
 }
+
+
+
+
+
+//lesson6
+fun main18() {
+    val number = 6
+    if(number > 5) { //если номер больше 5,а если меньше, то иначе..
+        println("Число больше 5") //печатаем
+    }
+    else{ //иначе
+    println("Число меньше или равно 5")
+
+
+        val numbers = 0
+        if(number > 5) { //если номер больше 5,а если меньше, то иначе..
+            println("Число больше 5") //печатаем
+        }
+        else if (number < 0) {
+            println("Число меньше 0")
+
+        }
+        else{ //иначе
+            println("Число меньше или равно 5")
+
+            //диапазон
+            val intRange: IntRange = 1..10 //возрастающий диапазон от 1 до 10 включительно
+            val intRangeUntil = 1 until 10 //возрастающий диапазон от 1 до 9
+            val downTo = 10 downTo 1 //диапазон наоборот от 10 до 1 включительно
+            val charRange: CharRange = 'd' .. 's' //диапазон символов от кода d до кода s
+            val inRange = 2 in intRange //2 в диапазоне от 1 до 10
+            val notInRange = 20 !in intRange //20 не в диапазоне от 1 до 10
+
+//            when (значение) {
+//                выражение1 -> {/*код*/}
+//                    выражение2 -> {/*код*/}
+//                else -> {/*код*/}
+//            }
+            //если проверки 2 то иф элс если больше то лучше вен
+            //если у нас много проверок и много выводов информации,то лушче иф элс
+            val score = 95
+            when {
+                score in 90..100 -> println("Отлично")
+                score in 80..89 -> println("Хорошо")
+                score in 70..79 -> println("Удовлетворительно")
+                else -> println("Нужно подучить")
+            }
+            val a = 3
+            val b = 4
+            val max = if (a > b) a else b //если условие верно то а будет числом макс,а если неверно то б будет числом макс
+            fun getTimesOfDay(hour: Int) {
+                if (hour >= 0 && hour < 5)
+                if (hour in 5..11)
+                if (hour in 12..16)
+                return getTimesOfDay(hour)
+                println(hour)
+            }
+            }
+
+            }
+        }
+

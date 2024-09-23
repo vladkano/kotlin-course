@@ -50,7 +50,7 @@ val result9: String = "true || true = true"
 //Сложный уровень
 //((4 * 3) < 13) && !(8 / 4 == 2) || (10 % 3 != 1)
 val example10 = ((4 * 3) < 13) && !(8 / 4 == 2) || (10 % 3 != 1)
-val result10: String = "(true && true) || false = true"
+val result10: String = "(true && true) || false = false"
 
 //((14 - 5) > 8) || (9 / 3 == 3) && !(7 + 0 != 7)
 val example11 = ((14 - 5) > 8) || (9 / 3 == 3) && !(7 + 0 != 7)
@@ -76,7 +76,7 @@ val result15: String = "true || (true && false) = true"
 //((var g = 0; g++ != 0) && (4 + 2 == 6)) || (5 / 1 == 5)
 val result16: String = "(false && true) || true = true"
 //(var h = 7; h-- > 6) || (8 + 1 == 9) && (3 % 2 != 1)
-val result17: String = "(true || true) && false = false"
+val result17: String = "true || true && false = true"
 //((var i = 5; i++ == 5) || (2 * 2 != 4)) && (10 / 2 == 5)
 val result18: String = "(true || false) && true = true"
 //(var j = 4; j-- < 4) && ((6 + 0 == 6) || (5 % 2 != 1))
@@ -97,13 +97,25 @@ val result19: String = "false && (true || false) = false"
 fun soundАttenuation(initialIntensity: Double, attenuationCoef: Double? = null): Double {
     val defaultVolume = attenuationCoef ?: 0.5
     return initialIntensity * defaultVolume
+
+
 }
 
-fun main() {
+fun main6() {
     val initialIntensityCoef = 100.0
-    val attenuationCoeff = 0.4
+    val attenuationCoeff = null
     val result = soundАttenuation(initialIntensityCoef, attenuationCoeff)
     println(result)
 
 
+}
+//Контекст: Клиент оплачивает доставку груза. К стоимости доставки добавляется страховка на груз,
+// которая составляет 0,5% от его стоимости. В случае, если стоимость не указана, то берётся
+// стандартная стоимость в $50
+//Задача: Рассчитать полную стоимость доставки.
+
+fun deliveryPack(priceDelivery: Int? = null, insurancePack: Double) {
+    val insurancePack = priceDelivery ?: 0.5
+}
+fun main(){
 }
