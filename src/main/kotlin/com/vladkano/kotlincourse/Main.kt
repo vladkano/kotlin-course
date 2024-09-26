@@ -1,3 +1,5 @@
+@file:Suppress("UNREACHABLE_CODE")
+
 package com.vladkano.com.vladkano.kotlincourse
 
 import java.nio.DoubleBuffer
@@ -232,4 +234,63 @@ fun main18() {
 
             }
         }
+//lesson7
+fun mainp() {
+    val range = 1..10
+    for (i in listOf(1,2,3)) { //можно и диапазон 1..3 или listOf("test", "test1") иди i in 1..10 step 2 - с шагом 2 будет счиать
+        //тело цикла
+        println(i) //результат 1 2 3
+    }
+    for (i in 1..10 step 5) {
+        println(i)
+    }
+    for (i in 10 downTo 1) {
+        println(i)
+    }
+    for (i in 1..10) {
+        println(i)
+    }
+    for (i in 1 until 10 step 5) {
+        println(i)
+    }
+    for (i in range) {
+        println(i)
+    }
+    while (true) {
+        println("+") //бесконечный цикл +++++++++++
+    }
+//    var counter = 10
+//    while (counter-- > 0) {
+//        println(counter) - 9...0
+//    }
+    do { println("+") //думмаем
 
+    } while (false) //делаем
+
+    for (i in 1..10 ) {
+        if (i == 2) continue
+        if (i == 7) break
+        println(i)
+    }
+    for (i in 1..5){
+        println(i*i) //квадраты числе от 1 до 5
+    }
+    for (i in 10 downTo 1) {
+        println(i)
+    }
+    for (i in 20 downTo 2 ){
+        if (i % 2 == 0)
+            println(i) //числа с шагом 2 будут выводиться
+    }
+    for (i in 1..30 step 3) {
+        println(i) //шаг 3
+    }
+    var count = 1
+    var sum = 0
+    while (count <= 10) {
+        sum = count++ + sum
+    }
+    println(sum)
+
+
+}

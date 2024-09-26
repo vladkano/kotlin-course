@@ -46,24 +46,24 @@ fun main(){
     println(bonusPoints(370.0))
     println(documentType(".pdf"))
     println(convertTemperature(30.0,"F"))
-    println(selectionOfClothes(22.5))
+    println(selectionOfClothes(22))
     println(availableFilmCategories(14))
 
 }
 //Задание 1: "Определение Сезона"
 fun monthNumber(month: Int): String {
     return when (month) {
-        in 1..3 -> "Зима"
-        in 4..6 -> "Весна"
-        in 7..9 -> "Лето"
-        in 10..12 -> "Осень"
-        else -> "Неопознанная чайка"
+        in 3..5 -> "Весна"
+        in 6..8 -> "Лето"
+        in 9..11 -> "Осень"
+        !in 1..12 -> "Неверно указан месяц"
+        else -> "Зима"
     }
 }
 //Задание 2: "Расчет Возраста Питомца"
 fun ageOfPet(age: Int): Any {
     return when (age) {
-        in 0..2 -> age * 10.5
+        in  1.. 2 -> age * 10.5
         else -> (age - 2) * 4 + 21
     }
 }
@@ -82,6 +82,7 @@ fun bonusPoints(purchaseAmount: Double): Int {
         else -> (purchaseAmount / 100).toInt() * 5
     }
 }
+
 //Задание 5: "Определение Типа Документа"
 fun documentType(fileExtensions: String): Any {
     return when (fileExtensions){
@@ -100,13 +101,12 @@ fun convertTemperature(temperature: Double, unit: String): String {
     }
 }
 //Задание 7: "Подбор Одежды по Погоде"
-fun selectionOfClothes(temperature: Double): String {
+fun selectionOfClothes(temperature: Int): String {
         return when (temperature) {
-            in 35.0..-30.0 -> "не выходить из дома"
-            in -30.0..0.0 -> "куртка и шапка"
-            in 0.0..15.0 -> "ветровка"
-            in 15.0..35.0 -> "футболка и шорты"
-            else -> "некорректная температура"
+            in -30 until 0 -> "куртка и шапка" //не включая 0
+            in 0..15 -> "ветровка"
+            in 16..35 -> "футболка и шорты"
+            else -> "не выходить из дома"
 
         }
 }
