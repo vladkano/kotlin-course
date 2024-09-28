@@ -140,7 +140,7 @@ fun mains() {
     println(number)
 }
 
-fun main() {
+fun main6() {
     printVolume(null)
 }
 fun printVolume(userVolume: Int?) {
@@ -294,3 +294,75 @@ fun mainp() {
 
 
 }
+
+//lesson8
+fun main9() {
+
+
+    val simpleString = "Это простая строка"
+    val firsName = "Иван"
+    val lastName = "Иванов"
+    val fullName = "$firsName $lastName"
+    val age = 30
+    val greeting = "Привет! Меня зовут $fullName, и мне $age лет"
+    println(greeting)
+    val person = Person("Алексей", 25)
+    val introduction = "Привет! Меня зовут $person.name , и мне ${person.age} лет"
+    val details = "Здесь находятся ${getDetails()}"
+    println(details)
+    val x = 10
+    val y = 20
+    val resultString = "Результат сложения x и y равен ${x + y}"
+}
+class Person(val name: String ,val age: Int)
+
+fun getDetails(): String {
+    return "очень интересны детали"
+}
+
+fun main() {
+    val originalString = "Kotlin is fun"
+//   val subString = originalString.substring(7) откуда начинать (7 буква)
+    val subString2 = originalString.substring(3,6) //кусочек из сообщения (начинаем с 0) и 6 не включительно,а 3 вкключительно
+    val replaceString = originalString.replace("n", "w") //заменяет одну букву на другую
+    val splitString = originalString.split("") //делит обьекты,в данном случае через пробел
+    val length = "Hello".length //5 букв
+    val upper = "hello".uppercase() //переводит в верхний регистр
+    val lower = "HELLO".lowercase() //в нижний
+    val trimmed = " hello ".trim() //убирает лишние наружние пробелы,а так же может убрать символ через "h"
+    val starts = "Kotlin".startsWith("Kot") //начинается ли страка с "" - true
+    val end = "Kotlin".endsWith("lin") //заканчивается ли с
+    val contains = "Hello".contains("ell") //проверяет есть ли ell
+    val e: String? = null
+    val empty = e.isNullOrEmpty() //проверяет null ли конкретный обьект (нет вообще ничего)
+    val blank = "  ".isNullOrBlank() //здесь есть пробел,но будет true
+    val repeat = "ab".repeat(3) //повторит 3 раза
+    val letter = originalString[5] //вернет букву n - 5 по счету
+    val indexOfChar = "Kotlin".indexOf("t") //выведет цифру 2,место ,на котором буква t
+    val indexOfWord = "Lotlin is the best language".indexOf("best") // вхождение по целой строке начинается на 14 индексе
+    val backReverse = "nilkoT".reversed() //вернет наоборот
+    val multiLineString = """
+             первая строка
+             вторая строка
+             третья строка
+        """.trimIndent() //каждую строку отчищает от пробелов слева
+    val string = "Sweet summer child"
+    val subString = string.substring(6) //6 индекс - с него начнет попадать в вывод
+    val subString1 = string.substring(6,12) //стартовый и конечный индекс
+
+    println(subString)
+    val name = "Алексей"
+    val city = "Москва"
+    val age = 32
+    val friendCount = 1052
+    val rating = 4.948
+    val balance = 2534.75856
+    val text = """
+        Имя: %s 
+        Город: %s
+        Возраст: %d
+        Количество друзей: %,d
+        Рейтинг пользователя: %.1f
+        Баланс счета: $%,.2f
+    """.trimIndent()
+    println(text.format(name, city, age, friendCount, rating, balance)) } //%s - строка, d - число, f - плавающая точка, .d - точка разбивает (делает пробел) на тысячи, .1 - точка это знак после запятой а 1 это кол-во знаков

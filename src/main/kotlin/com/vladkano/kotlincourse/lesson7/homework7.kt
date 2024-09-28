@@ -111,12 +111,14 @@ fun mains() {
         }
         for (i in 1..10) {
             for (j in 1..10) {
-                print("${i * j} ")
+                print(i * j)
+                print(" ")
             }
             println()
         }
 
 }}
+
 
 
 
