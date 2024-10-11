@@ -320,7 +320,7 @@ fun getDetails(): String {
     return "очень интересны детали"
 }
 
-fun main() {
+fun mains2() {
     val originalString = "Kotlin is fun"
 //   val subString = originalString.substring(7) откуда начинать (7 буква)
     val subString2 = originalString.substring(3,6) //кусочек из сообщения (начинаем с 0) и 6 не включительно,а 3 вкключительно
@@ -366,3 +366,50 @@ fun main() {
         Баланс счета: $%,.2f
     """.trimIndent()
     println(text.format(name, city, age, friendCount, rating, balance)) } //%s - строка, d - число, f - плавающая точка, .d - точка разбивает (делает пробел) на тысячи, .1 - точка это знак после запятой а 1 это кол-во знаков
+
+//lesson10 массивы
+fun main() {
+    val numbers: Array<Int> = arrayOf(1, 2, 3, 4, 5)
+    val doubles: DoubleArray = doubleArrayOf(1.1, 1.2, 1.3)
+
+    val emptyArray = Array(5) { "" } //может быть { 1 } то есть int
+    val emptyNullableArray: Array<Int?> = arrayOfNulls<Int>(5)
+
+    val readOnlyList: List<String> = listOf("a", "b", "c") //лист оф создает список неизменяемых эллеметнов
+    val mutableList: MutableList<String> = mutableListOf("a", "b", "c") //изменяемы список
+
+    val numbersSet: Set<Int> = setOf(1, 2, 3, 4, 5) //все эл-ты множества уникальны
+    val mutableNumberSet: Set<Int> = mutableSetOf(1, 2, 3, 4, 5)
+
+    val set = setOf("k", "o", "t", "l", "i", "n")
+    for (letter in set) {
+        println("| $letter |")
+    }
+
+    val list = listOf(32, 53,1, -76)
+    for (index in list.indices) {
+        if (index == list.lastIndex) {
+            println(list[index] + list[0])
+        } else {
+            println(list[index] + list[index + 1])
+        }
+    }
+
+    var index = list.lastIndex
+    while (index >= 0) {
+        println("'${list[index--]}'")
+    }
+
+    val number = Array(100) {0}
+    println(number[0])
+
+    val numberDouble = doubleArrayOf(1.0, 2.0, 3.0, 4.0, 5.0)
+    println(numberDouble[2])
+
+    val number0 = Array(10) { 0 }
+    number0[0]=10
+    for (i in number0.indices) {
+        number0[i]
+        println(i)
+    }
+}
